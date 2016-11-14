@@ -23,7 +23,7 @@ library(rscimap)
 
 ## Documentation
 
-The first step is to get citations from a search on Web of Science on a specific topic.
+The first step is to get citations from a search on Web of Science about a specific topic.
 Once you get the result of your search, select __Save to Other File Formats__ to export bibliographic citations as shown below.
 
 ![Screenshot of the Web of Science export interface](/img/wos1.png)
@@ -34,18 +34,16 @@ Then select __Full records and Cited References__ and the format __Other Referen
 
 Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop.
 
-#### Filter document types
+### Filter document types
 
 ...
 
 ```r
-### Listing files to be openned
-(fls  <- list.files(path = '~/Desktop/biblio',
-                    pattern = '.txt$',
-                    full.names = TRUE))
-
-### Set the output directory
+### Set the input/output directory
 setwd('~/Desktop/biblio')
+
+### Filename with raw citations
+fls  <- '~/Desktop/biblio/search-wos.txt'
 
 ### Filter documents by type
 refs <- filterArticles(files = fls,
@@ -53,7 +51,7 @@ refs <- filterArticles(files = fls,
 ```
 
 
-#### Remove punctuation characters
+### Remove punctuation characters
 
 ...
 
@@ -66,7 +64,7 @@ refs <- removePonctuation(data = refs,
 
 
 
-#### Convert to lower case
+### Convert to lower case
 
 ...
 
@@ -78,7 +76,7 @@ refs <- toLowercase(data = refs,
 
 
 
-#### Remove stopwords
+### Remove stopwords
 
 ...
 
@@ -107,7 +105,7 @@ getStopwords(which = 'adverbs')
 ```
 
 
-#### Remove word endings
+### Remove word endings
 
 ...
 
@@ -121,7 +119,7 @@ refs <- removeWordEndings(x = refs,
 
 
 
-#### Split associated words
+### Split associated words
 
 ...
 
@@ -133,7 +131,7 @@ refs <- splitWords(x = refs,
 ```
 
 
-#### Check words spelling (group words)
+### Check words spelling (group words)
 
 ...
 
@@ -147,7 +145,7 @@ refs <- checkSpelling(data = refs,
 
 
 
-#### Correct words spelling (specific cases)
+### Correct words spelling (specific cases)
 
 ...
 
@@ -161,7 +159,7 @@ refs <- correctSpelling(x = refs,
 
 
 
-#### Combine two words
+### Combine two words
 
 ...
 
