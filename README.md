@@ -49,13 +49,15 @@ The `filterArticles()` function allows you to also select specific documents typ
 setwd('~/Desktop/biblio')
 
 ### Filename with raw citations
-fls  <- '~/Desktop/biblio/search-wos.txt'
+fls  <- 'search-wos.txt'
 
 ### Filter documents by type
 refs <- filterArticles(files = fls,
                        type = c('Article', 'Editorial Material', 'Review'))
 ```
 
+**NOTE 1:** This step is mandatory to format data for the following functions.
+**NOTE 2:** This function and the others return a list but also write data on the disk in the output directory.
 
 ### Remove punctuation characters
 
