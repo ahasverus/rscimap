@@ -30,7 +30,7 @@ getWords <- function(data, tag = 'TI', format = 'advanced', nmax = NULL){
         cat(paste(twords, collapse = '\n'), file = './words2wordle-advanced.txt')
     }
 
-    if (format = 'simple'){
+    if (format == 'simple'){
 
         words  <- table(words)[order(table(words), decreasing = TRUE)]
         twords <- data.frame(words)
