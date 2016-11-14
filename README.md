@@ -1,6 +1,6 @@
 # rscimap
 
-An R package to clean words and references in bibliographic citations
+An R package to clean words and cited references in bibliographic citations to perform robust wordclouds or social network analysis (also known as science mapping)
 
 
 
