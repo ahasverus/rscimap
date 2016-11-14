@@ -36,9 +36,13 @@ Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop.
 
 ![Screenshot of the Web of Science export interface](/img/ris.png)
 
-### Filter document types
 
-...
+
+### Format documents and filter document types
+
+The first step is to format raw citations in a more _user-friendly_ format, i.e. an __R list__ where each element of this list is a citation. Each citation is a sub-list where each element is a specific information (e.g. authors, title, keywords, volume, abstract, cited references, etc.).
+
+The `filterArticles()` function allows you to also select specific documents types. For now, only _article_, _editorial_ and _review_ are implemented. If you don't want to select specific document types, just set the argument `type` to `NULL`.
 
 ```r
 ### Set the input/output directory

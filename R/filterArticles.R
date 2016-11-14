@@ -2,7 +2,11 @@ filterArticles <- function(files, type = c('Article', 'Editorial Material', 'Rev
 
     options(warn = -1)
 
-    dt <- paste(paste('DT', type), collapse = '|')
+    if (!is.null(type)){
+        dt <- paste(paste('^DT', type), collapse = '|')
+    } else {
+        dt <- '^DT '
+    }
 
     cat(paste0('\n\n>>> Filtering citations < ', paste0(type, collapse = ', '), ' >...\n'))
 
