@@ -149,7 +149,7 @@ refs <- splitWords(x = refs,
 
 ### Check words spelling (group words)
 
-The function `removeWordEndings()` is based on common word endings. But after this use, words can still be reduce to a single form. The function `checkSpelling()` opens an interactive mode to groups words in a single term. For instance, _climate_, _climates_, _climatic_ and _climatically_ can be grouped under the term _climate_. This function is based on string similarity distance of the package `stringdist`: for a given word, the algorithm computes the distance in term of letters (substitution, replacement, inversion, etc.) with all the words. The argument `distance` indicates a threshold to consider similar words: a high value will be less restrictive, but suggested similar words will be numerous. By default, the distance method is the Levenshtein distance (it counts the number of deletions, insertions and substitutions necessary to turn b into a). Type `?stringdist` for further details.
+The function `removeWordEndings()` is based on common word endings. But after its use, words can still be reduced to a single form. The function `checkSpelling()` opens an interactive mode to group words in a single term. For instance, _climate_, _climates_, _climatic_ and _climatically_ can be grouped under the term _climate_. This function is based on string similarity distance of the package `stringdist`: for a given word, the algorithm computes the distance in term of letters (substitution, replacement, inversion, etc.) with all the words. The argument `distance` indicates a threshold to consider similar words: a high value will be less restrictive, but suggested similar words will be numerous. By default, the distance method is the Levenshtein distance (it counts the number of deletions, insertions and substitutions necessary to turn b into a). Type `?stringdist` for further details.
 
 ```r
 ### Correct words spelling (manual)
@@ -185,6 +185,36 @@ refs <- combineWords(x = refs,
                      tag = c('TI', 'ID', 'DE', 'AB'),
                      threshold = 5)
 ```
+
+
+### Export words to wordcloud
+
+...
+
+```r
+### Get words list
+words <- getWords(data = refs,
+                  tag = c('TI', 'ID', 'DE', 'AB'),
+                  format = 'advanced',
+                  nmax = 150)
+```
+
+
+### Create Documents-Terms Matrix
+
+...
+
+### Clean cited references
+
+...
+
+### Group cited references
+
+...
+
+### Create adjacency Matrix
+
+...
 
 ## Notes
 
