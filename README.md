@@ -32,7 +32,7 @@ Then select __Full records and Cited References__ and the format __Other Referen
 
 ![Screenshot of the Web of Science export interface](/img/wos2.png)
 
-Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop. Your(s) file(s) should look like this:
+Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop. Your(s) file(s) might look like this:
 
 ![Screenshot of the Web of Science export interface](/img/ris.png)
 
@@ -63,7 +63,7 @@ refs <- filterArticles(files = fls,
 
 ### Remove punctuation characters
 
-You can remove all punctuation symbols in all textual fields or in some field. Just indicate the field(s) (`tag`) to remove symbols: `TI` for the document title, `ID` for authors keywords, `DE` for Keywords Plus and `AB` for the abstract.
+You can remove all punctuation symbols in all textual fields or in some fields. Just indicate the field(s) (`tag`) to remove symbols: `TI` for the document title, `ID` for authors keywords, `DE` for Keywords Plus and `AB` for the abstract.
 
 You also can remove punctuation symbols with some exceptions. For instance, you might want to keep the hyphen in associated words. Just indicate this symbol in the argument `exception`.
 
@@ -120,7 +120,7 @@ getStopwords(which = 'adverbs')
 
 ### Remove word endings
 
-To perform a robust wordcloud, words need to be reduct to a single form. This particularly true for verbs, superlatives, comparatives and plural. The function `removeWordEndings()` automatically remove common words endings based on some conjugation and grammar rules. But as to many exceptions exist, this function also offer an interactive mode to remove manually other word endings (suggested by the algorithm). Just set `ask = TRUE` to activate the interactive mode.
+To perform a robust wordcloud, words need to be reduct to a single form. This is particularly true for verbs, superlatives, comparatives and plural. The function `removeWordEndings()` automatically remove common words endings based on some conjugation and grammar rules. But as to many exceptions exist, this function also offer an interactive mode to remove manually other word endings (suggested by the algorithm). Just set `ask = TRUE` to activate the interactive mode.
 
 ```r
 ### Remove common words endings (automatic and manual)
@@ -149,7 +149,7 @@ refs <- splitWords(x = refs,
 
 ### Check words spelling (group words)
 
-...
+The function `removeWordEndings()` is based on common word endings. But after this use, words can still be reduce to a single form. The function `checkSpelling()` opens an interactive mode to groups words in a single term. For instance, _climate_, _climates_, _climatic_ and _climatically_ can be grouped under the term _climate_. This function is based on string similarity distance of the package `stringdist`: for a given word, the algorithm computes the distance in term of letters (substitution, replacement, inversion, etc.) with all the words. The argument `distance` indicates a threshold to consider similar words: a high value will be less restrictive, but suggested similar words will be numerous. By default, the distance method is the Levenshtein distance (it counts the number of deletions, insertions and substitutions necessary to turn b into a). Type `?stringdist` for further details.
 
 ```r
 ### Correct words spelling (manual)
@@ -188,4 +188,4 @@ refs <- combineWords(x = refs,
 
 ## Notes
 
-Only Web-of-Science format is implemented. Moreover informations are only extracted for articles, editorial material and review types.
+See Issues for further developments.
