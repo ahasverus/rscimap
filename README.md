@@ -23,9 +23,16 @@ library(rscimap)
 
 ## Documentation
 
-The first step is to get citations from a search on Web of Science. To export the result of the search from Web of Science, save citations in _Other File Formats_ and select _Full records and Cited References_ in the format _Other Reference Software_.
+The first step is to get citations from a search on Web of Science on a specific topic.
+Once you get the result of your search, select __Save to Other File Formats__ to export bibliographic citations as shown below.
 
-![Screenshot of the Web of Science export interface](/img/wos.png)
+![Screenshot of the Web of Science export interface](/img/wos1.png)
+
+Then select __Full records and Cited References__ and the format __Other Reference Software__ to export citations. Be careful: this export method works only for 500 records at the same time. If you have more than 500, you'll have to repeat this export step by adjusting the __Number of records__.
+
+![Screenshot of the Web of Science export interface](/img/wos2.png)
+
+Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop.
 
 #### Filter document types
 
@@ -33,12 +40,12 @@ The first step is to get citations from a search on Web of Science. To export th
 
 ```r
 ### Listing files to be openned
-(fls  <- list.files(path = '~/Documents/biblio',
+(fls  <- list.files(path = '~/Desktop/biblio',
                     pattern = '.txt$',
                     full.names = TRUE))
 
 ### Set the output directory
-setwd('~/Documents/biblio')
+setwd('~/Desktop/biblio')
 
 ### Filter documents by type
 refs <- filterArticles(files = fls,
