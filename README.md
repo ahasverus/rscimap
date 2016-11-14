@@ -42,7 +42,7 @@ Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop.
 
 The first step is to format raw citations in a more _user-friendly_ format, i.e. an __R list__ where each element of this list is a citation. Each citation is a sub-list where each element is a specific information (e.g. authors, title, keywords, volume, abstract, cited references, etc.).
 
-The `filterArticles()` function allows you to also select specific documents types. For now, only _article_, _editorial_ and _review_ are implemented. If you don't want to select specific document types, just set the argument `type` to `NULL`.
+The `filterArticles()` function allows you to also select specific documents types. For now, only _article_, _editorial_ and _review_ are implemented. If you want to use all documents, just set the argument `type` to `NULL`.
 
 ```r
 ### Set the input/output directory
@@ -63,13 +63,16 @@ refs <- filterArticles(files = fls,
 
 ### Remove punctuation characters
 
-...
+You can remove all punctuation symbols in all textual fields or in some field. Just indicate the field(s) (`tag`) to remove symbols: `TI` for the document title, `ID` for authors keywords, `DE` for Keywords Plus and `AB` for the abstract.
+
+You also can remove punctuation symbols with some exceptions. For instance, you would keep the hyphen in associated words. Just indicate these symbols in the argument `exception`.
+
 
 ```r
 ### Remove ponctuation (with some exceptions if required)
 refs <- removePonctuation(data = refs,
                           tag = c('TI', 'ID', 'DE', 'AB'),
-                          exception = c('-', '\''))
+                          exception = '-')
 ```
 
 
