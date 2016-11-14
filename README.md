@@ -218,4 +218,4 @@ words <- getWords(data = refs,
 
 ## Notes
 
-See Issues for further developments.
+See Issues for future developments.
