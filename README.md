@@ -23,12 +23,16 @@ library(rscimap)
 
 ## Documentation
 
+The first step is to get citations from a search on Web of Science. To export the result of the search from Web of Science, save citations in _Other File Formats_ and select _Full records and Cited References_ in the format _Other Reference Software_.
+
+![Screenshot of the Web of Science export interface](/img/wos.png)
+
 #### Filter document types
 
 ...
 
 ```r
-### Listing files to open
+### Listing files to be openned
 (fls  <- list.files(path = '~/Documents/biblio',
                     pattern = '.txt$',
                     full.names = TRUE))
@@ -85,13 +89,13 @@ refs <- removeWords(x = refs,
 To see which words will be removed:
 
 ```r
-### List of adjectives to be removed
+### List of stopwords to be removed
 getStopwords(which = 'stopwords')
 
 ### List of adjectives to be removed
 getStopwords(which = 'adjectives')
 
-### List of adjectives to be removed
+### List of adverbs to be removed
 getStopwords(which = 'adverbs')
 ```
 
