@@ -32,7 +32,9 @@ Then select __Full records and Cited References__ and the format __Other Referen
 
 ![Screenshot of the Web of Science export interface](/img/wos2.png)
 
-Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop.
+Finally put this/these file(s) in a folder, let's say `biblio`, on your desktop. Your(s) file(s) should look like this:
+
+![Screenshot of the Web of Science export interface](/img/ris.png)
 
 ### Filter document types
 
