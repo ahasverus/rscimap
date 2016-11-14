@@ -56,9 +56,7 @@ refs <- filterArticles(files = fls,
                        type = c('Article', 'Editorial Material', 'Review'))
 ```
 
-**NOTE 1:** This step is mandatory to format data for the following functions.
-
-**NOTE 2:** This function and the others return a list but also write data on the disk in the output directory.
+**NOTES:** This step is mandatory to format data for the following functions. This function and the others return a list but also write data on the disk in the output directory (in the RDS format).
 
 
 
