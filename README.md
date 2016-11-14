@@ -91,7 +91,7 @@ refs <- toLowercase(data = refs,
 
 ### Remove stopwords
 
-Some words are non-informational. For instance, prepositions, postposition, conjunctions, articles, pronouns, etc. These are stopwords. You can remove them in textual fields. You also can delete common adjectives, common adverbs, one-letter words and numbers (written in numbers or in letters). Just select what you want to delete.
+Some words are non-informational. For instance, prepositions, postpositions, conjunctions, articles, pronouns, etc. These are stopwords. You can remove them in textual fields. You also can delete common adjectives, common adverbs, one-letter words and numbers (written in numbers or in letters). Just select what you want to delete.
 
 ```r
 ### Remove stopwords, adverbs and numbers
@@ -130,12 +130,14 @@ refs <- removeWordEndings(x = refs,
                           import = FALSE)
 ```
 
+If you want to use this function in batches, just set `import = TRUE` to restart where you left off the last time (except for the first time).
+
+
 
 
 ### Split associated words
 
-
-Skip this step if you have previously deleted hyphen symbol.
+You can change the spelling of associated words tagged by the hyphen. This is an interactive mode, jsut follow the informations at the screen. For instance, you change __canis-lupus__ by __canislupus__. Skip this step if you have previously deleted hyphen symbol.
 
 ```r
 ### Split associated words
@@ -161,7 +163,7 @@ refs <- checkSpelling(data = refs,
 
 ### Correct words spelling (specific cases)
 
-...
+You can change the spelling of a word by specifying the old spelling and the new one as follow:
 
 ```r
 ### Correct specific spelling
