@@ -57,7 +57,11 @@ refs <- filterArticles(files = fls,
 ```
 
 **NOTE 1:** This step is mandatory to format data for the following functions.
+
 **NOTE 2:** This function and the others return a list but also write data on the disk in the output directory.
+
+
+
 
 ### Remove punctuation characters
 
