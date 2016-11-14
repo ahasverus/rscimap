@@ -10,5 +10,3 @@
 \details{These functions are low level functions. Not for a direct use.}
 
 \author{Nicolas Casajus}
-
-}
