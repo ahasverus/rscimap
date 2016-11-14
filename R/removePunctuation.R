@@ -1,4 +1,4 @@
-removePonctuation <- function(data, tag = 'TI', exception = NULL){
+removePunctuation <- function(data, tag = 'TI', exception = NULL){
 
     if (!is.list(data))
         stop('Data has to be the output of filterArticles(), i.e. a list.')

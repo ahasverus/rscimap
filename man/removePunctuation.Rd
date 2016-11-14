@@ -1,12 +1,12 @@
-\name{removePonctuation}
-\alias{removePonctuation}
+\name{removePunctuation}
+\alias{removePunctuation}
 
 \title{Remove punctuation characters in citations fields}
 
 \description{Remove punctuation characters in citations fields}
 
 \usage{
-    removePonctuation(data, tag = 'TI', exception = NULL)
+    removePunctuation(data, tag = 'TI', exception = NULL)
 }
 
 \arguments{
