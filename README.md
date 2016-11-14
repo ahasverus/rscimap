@@ -65,7 +65,7 @@ refs <- filterArticles(files = fls,
 
 You can remove all punctuation symbols in all textual fields or in some field. Just indicate the field(s) (`tag`) to remove symbols: `TI` for the document title, `ID` for authors keywords, `DE` for Keywords Plus and `AB` for the abstract.
 
-You also can remove punctuation symbols with some exceptions. For instance, you would keep the hyphen in associated words. Just indicate these symbols in the argument `exception`.
+You also can remove punctuation symbols with some exceptions. For instance, you might want to keep the hyphen in associated words. Just indicate this symbol in the argument `exception`.
 
 
 ```r
@@ -79,7 +79,7 @@ refs <- removePonctuation(data = refs,
 
 ### Convert to lower case
 
-...
+You can also convert all textual fields in lower case. Just indicate the field(s) (`tag`).
 
 ```r
 ### Convert to lowercase
@@ -91,7 +91,7 @@ refs <- toLowercase(data = refs,
 
 ### Remove stopwords
 
-...
+Some words are non-informational. For instance, prepositions, postposition, conjunctions, articles, pronouns, etc. These are stopwords. You can remove them in textual fields. You also can delete common adjectives, common adverbs, one-letter words and numbers (written in numbers or in letters). Just select what you want to delete.
 
 ```r
 ### Remove stopwords, adverbs and numbers
@@ -107,20 +107,20 @@ refs <- removeWords(x = refs,
 To see which words will be removed:
 
 ```r
-### List of stopwords to be removed
+### List of stopwords that will be removed
 getStopwords(which = 'stopwords')
 
-### List of adjectives to be removed
+### List of adjectives that will be removed
 getStopwords(which = 'adjectives')
 
-### List of adverbs to be removed
+### List of adverbs that will be removed
 getStopwords(which = 'adverbs')
 ```
 
 
 ### Remove word endings
 
-...
+To perform a robust wordcloud, words need to be reduct to a single form. This particularly true for verbs, superlatives, comparatives and plural. The function `removeWordEndings()` automatically remove common words endings based on some conjugation and grammar rules. But as to many exceptions exist, this function also offer an interactive mode to remove manually other word endings (suggested by the algorithm). Just set `ask = TRUE` to activate the interactive mode.
 
 ```r
 ### Remove common words endings (automatic and manual)
@@ -134,7 +134,8 @@ refs <- removeWordEndings(x = refs,
 
 ### Split associated words
 
-...
+
+Skip this step if you have previously deleted hyphen symbol.
 
 ```r
 ### Split associated words
