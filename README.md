@@ -177,7 +177,7 @@ refs <- correctSpelling(x = refs,
 
 ### Combine two words
 
-Finally, you can associate two words in one meaningful term (i.e. `climate` and `change` can be group in `climatechange`). This step is interactive and the algorithm suggests words that are frequently side by side in textual fields. The occurrence of association is determined by the `threshold` argument.
+Finally, you can associate two words in one meaningful term (i.e. `climate` and `change` can be grouped in `climatechange`). This step is interactive and the algorithm suggests words that are frequently side by side in textual fields. The occurrence of association is determined by the `threshold` argument.
 
 ```r
 ### Combine two words (i.e. climate change to climateChange)
@@ -189,7 +189,7 @@ refs <- combineWords(x = refs,
 
 ### Export words to wordcloud
 
-Once the cleanup of words is done, you can export words to perform a wordcloud. Two formats area available: `simple` export all words (with repetition) in a textfile whereas `advanced` returns all unique words associated with their frequency of occurrence. The latter is the format used by [wordle.net](http://www.wordle.net/advanced) (tab _Advanced_).
+Once the cleanup of words is done, you can export words to perform a wordcloud. Two formats area available: `simple` exports all words (with repetition) in a textfile whereas `advanced` returns all unique words associated with their frequency of occurrence. The latter is the one used by [wordle.net](http://www.wordle.net/advanced) (tab _Advanced_).
 
 ```r
 ### Get words list
