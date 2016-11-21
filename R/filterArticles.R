@@ -3,9 +3,9 @@ filterArticles <- function(files, type = c('Article', 'Editorial Material', 'Rev
     options(warn = -1)
 
     if (!is.null(type)){
-        dt <- paste(paste('^DT', type), collapse = '|')
+        dt <- paste(paste('DT', type), collapse = '|')
     } else {
-        dt <- '^DT '
+        dt <- 'DT '
     }
 
     cat(paste0('\n\n>>> Filtering citations < ', paste0(type, collapse = ', '), ' >...\n'))
@@ -24,7 +24,7 @@ filterArticles <- function(files, type = c('Article', 'Editorial Material', 'Rev
             zero <- ifelse(nchar(k) == 1, '000', ifelse(nchar(k) == 2, '00', ifelse(nchar(k) == 3, '0', '')))
             dat  <- paste(c(tab[pos0[j]:pos1[j]], ''), collapse = '\n', sep = '')
 
-            if (length(grep(dt, dat)) > 0 && length(grep('CR ', dat)) > 0){
+            if (length(grep(dt, dat)) > 0){
 
                 mat <- tab[pos0[j]:pos1[j]]
 
