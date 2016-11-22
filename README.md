@@ -70,7 +70,7 @@ You also can remove punctuation symbols with some exceptions. For instance, you 
 
 ```r
 ### Remove ponctuation (with some exceptions if required)
-refs <- removePonctuation(data = refs,
+refs <- removePunctuation(data = refs,
                           tag = c('TI', 'ID', 'DE', 'AB'),
                           exception = '-')
 ```
